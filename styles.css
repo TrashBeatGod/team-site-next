@@ -1,0 +1,338 @@
+/* 桌面图标样式 */
+.desktop-icon {
+    position: absolute;
+    top: 20px;
+    width: 80px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.desktop-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.desktop-icon:active {
+    transform: scale(0.95);
+}
+
+/* 图标位置 - 竖向排列 */
+#artist-icon {
+    left: 20px;
+    top: 10px;
+}
+
+#music-icon {
+    left: 20px;
+    top: 110px;
+}
+
+#video-icon {
+    left: 20px;
+    top: 210px;
+}
+
+/* 图标图片样式 */
+.icon-image {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* 图标文字样式 */
+.icon-text {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    line-height: 1.2;
+    max-width: 100%;
+    word-wrap: break-word;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+    font-style: italic;
+    letter-spacing: -0.3px;
+    transform: rotate(-1deg);
+}
+
+/* 应用窗口样式 */
+.app-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    background-color: #800020;
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+}
+
+.app-window.active {
+    display: block;
+}
+
+.window-header {
+    position: relative;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-title {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.window-controls {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.window-control {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.window-control:hover {
+    opacity: 0.8;
+}
+
+.window-control.close {
+    background: #ff5f57;
+    position: relative;
+}
+
+.window-control.close::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.window-content {
+    padding: 20px;
+    color: #E5E5EA;
+    overflow: auto;
+    flex: 1;
+}
+
+.artist-window .window-content {
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
+    height: 100%;
+}
+
+.window-content h2 {
+    margin-bottom: 15px;
+    color: #E5E5EA;
+}
+
+.window-content p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url('Background Photo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', 'Bradley Hand ITC', 'Marker Felt', cursive, sans-serif;
+    overflow: hidden;
+    cursor: default;
+    letter-spacing: -0.5px;
+}
+
+/* 艺术家视图切换样式 */
+.artist-window {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #800020;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.window-close-control {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+}
+
+
+
+.navigation-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.nav-arrow {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    pointer-events: all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-arrow:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+.views-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 3;
+    pointer-events: auto;
+}
+
+.view.active {
+    display: block;
+}
+
+.view h2 {
+    color: #E5E5EA;
+    margin-bottom: 10px;
+    font-size: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+    font-weight: bold;
+    letter-spacing: -1px;
+    transform: rotate(-1deg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.view p {
+    color: #E5E5EA;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+    letter-spacing: -0.5px;
+    transform: rotate(-0.5deg);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.artist-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 120px 150px;
+    gap: 80px;
+}
+
+.artist-info {
+    flex: 1;
+    text-align: left;
+    padding-right: 40px;
+}
+
+.artist-image {
+    flex: 0 0 350px;
+    height: 450px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.artist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 试听按钮样式 */
+.listen-button {
+    display: inline-block;
+    padding: 12px 24px;
+    color: white;
+    background-color: #000000;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+    border: 2px solid transparent;
+}

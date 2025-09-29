@@ -1,0 +1,10 @@
+---
+title: "视频标题"
+artist: "艺术家名称"
+description: "视频描述（可选）"
+thumbnail: "/path/to/thumbnail.jpg"
+url: "https://视频链接"
+order: 1
+---
+
+视频内容描述（如果需要）
