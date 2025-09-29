@@ -8,7 +8,6 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-  DialogClose,
 } from '@/components/ui/dialog';
 import {
   Carousel,
@@ -113,16 +112,7 @@ export default function Home() {
     ));
   };
 
-  // 切换视图（上一个/下一个）
-  const changeView = (appName: string, direction: 'prev' | 'next') => {
-    const win = windows.find(w => w.type === appName);
-    if (win) {
-      const newView = direction === 'prev' 
-        ? (win.currentView - 1 + win.totalViews) % win.totalViews
-        : (win.currentView + 1) % win.totalViews;
-      switchView(appName, newView);
-    }
-  };
+
 
   // 监听桌面图标点击/双击
   useEffect(() => {
@@ -147,7 +137,7 @@ export default function Home() {
 
     document.addEventListener('click', handleClick);
     return () => document.removeEventListener('click', handleClick);
-  }, [windows]);
+  }, [windows, handleIconDoubleClick]);
 
   return (
     <>

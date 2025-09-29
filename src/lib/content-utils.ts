@@ -55,12 +55,11 @@ const fallbackVideos: Video[] = [
 export async function getArtists(): Promise<Artist[]> {
   try {
     // 尝试使用 import 语法导入 Content Collections 生成的内容
-    // @ts-ignore - 这些文件将在构建时生成
     const artistsModule = await import('../../.content-collections/generated/allArtists.js');
     const artistsData = artistsModule.default || [];
     console.log('Loaded artists from Content Collections:', artistsData.map(a => a.title));
     return artistsData.sort((a: Artist, b: Artist) => (a.order || 0) - (b.order || 0));
-  } catch (error) {
+  } catch {
     console.warn('Content Collections not yet generated, using fallback data for artists');
     return fallbackArtists;
   }
@@ -68,11 +67,10 @@ export async function getArtists(): Promise<Artist[]> {
 
 export async function getMusic(): Promise<Music[]> {
   try {
-    // @ts-ignore
     const musicModule = await import('../../.content-collections/generated/allMusic.js');
     const musicData = musicModule.default || [];
     return musicData.sort((a: Music, b: Music) => (a.order || 0) - (b.order || 0));
-  } catch (error) {
+  } catch {
     console.warn('Failed to load music from content collections, using fallback data');
     return fallbackMusic;
   }
@@ -80,11 +78,10 @@ export async function getMusic(): Promise<Music[]> {
 
 export async function getVideos(): Promise<Video[]> {
   try {
-    // @ts-ignore
     const videosModule = await import('../../.content-collections/generated/allVideos.js');
     const videosData = videosModule.default || [];
     return videosData.sort((a: Video, b: Video) => (a.order || 0) - (b.order || 0));
-  } catch (error) {
+  } catch {
     console.warn('Failed to load videos from content collections, using fallback data');
     return fallbackVideos;
   }
