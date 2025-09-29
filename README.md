@@ -1,107 +1,147 @@
-# Team Site Next - 个人开发作品展示
+# TrashBeatGod Team Site
 
-一个由我独立开发的现代化音乐团队网站，采用Next.js全栈技术栈和Windows桌面风格的UI设计，充分展示我的前端开发能力和技术架构设计能力。
+一个现代化的音乐团队网站，采用Windows桌面风格的UI设计，基于Next.js和Content Collections构建。
 
-## 🌟 项目亮点
+## 🚀 项目特色
 
-- **全栈技术能力**: 独立完成Next.js 15.5.4 + React 19 + TypeScript全栈开发
-- **现代化UI设计**: 基于shadcn/ui组件库构建的Windows桌面风格界面
-- **内容管理系统**: 自主实现的Content Collections内容管理架构
-- **性能优化**: 使用Turbopack实现快速开发和构建优化
-- **代码质量**: 严格的TypeScript类型安全和ESLint代码规范
+- **现代化技术栈**: Next.js 14 + React + TypeScript
+- **Windows桌面风格**: 独特的桌面图标和窗口管理界面
+- **内容管理系统**: 基于Content Collections的内容管理
+- **响应式设计**: 完美适配桌面和移动设备
+- **静态站点生成**: 高性能的静态导出部署
+
+## 📋 功能特性
+
+### 🎵 艺术家展示
+- 艺术家信息展示（名称、流派、描述）
+- 艺术家图片展示
+- 响应式艺术家卡片布局
+
+### 🎶 音乐作品
+- 音乐曲目列表
+- 专辑信息展示
+- 试听功能支持
+
+### 🎬 视频内容
+- 音乐视频展示
+- 视频缩略图预览
+- 视频播放链接
+
+### 🖥️ 用户界面
+- Windows桌面风格的图标系统
+- 模态窗口管理
+- 平滑的动画过渡效果
+- 自定义CSS主题系统
+
+## 🛠️ 技术架构
+
+### 核心技术
+- **Next.js 14**: React全栈框架，支持App Router
+- **TypeScript**: 类型安全的JavaScript开发
+- **Tailwind CSS**: 实用优先的CSS框架
+- **shadcn/ui**: 现代化的UI组件库
+- **Content Collections**: 类型安全的内容管理系统
+
+### 开发工具
+- **ESLint**: 代码质量检查
+- **PostCSS**: CSS后处理
+- **Turbopack**: 快速的构建工具
+
+## 📦 项目结构
+
+```
+team-site-next/
+├── .content-collections/     # Content Collections生成文件
+├── .github/workflows/       # GitHub Actions配置
+├── content/                 # 内容源文件
+│   ├── artists/            # 艺术家内容
+│   ├── music/              # 音乐内容
+│   └── videos/             # 视频内容
+├── public/                  # 静态资源
+│   ├── image/              # 图片资源
+│   └── Background Photo.jpeg
+├── src/
+│   ├── app/                # Next.js App Router
+│   │   ├── globals.css     # 全局样式
+│   │   ├── layout.tsx      # 根布局
+│   │   └── page.tsx        # 首页组件
+│   ├── components/         # React组件
+│   └── lib/                # 工具函数
+│       ├── content.ts      # 内容类型定义
+│       └── content-utils.ts # 内容工具函数
+├── content-collections.ts   # Content Collections配置
+├── next.config.ts          # Next.js配置
+└── package.json            # 项目依赖
+```
 
 ## 🚀 快速开始
 
 ### 环境要求
 
-- Node.js 18+ 
-- npm 或 yarn
+- Node.js 18.17 或更高版本
+- npm 或 yarn 包管理器
 
 ### 安装依赖
 
 ```bash
+# 使用 npm
 npm install
-# 或
+
+# 或使用 yarn
 yarn install
 ```
 
 ### 开发模式
 
 ```bash
+# 启动开发服务器
 npm run dev
-# 或
+
+# 或使用 yarn
 yarn dev
 ```
 
-访问 http://localhost:3000 查看网站
+访问 http://localhost:3000 查看网站。
 
-### 生产构建
+### 构建项目
 
 ```bash
+# 构建生产版本
 npm run build
-npm start
+
+# 或使用 yarn
+yarn build
 ```
 
-## 📁 项目结构
+### 静态导出
 
+```bash
+# 生成静态文件
+npm run export
+
+# 或使用 yarn
+yarn export
 ```
-team-site-next/
-├── content/                 # 内容文件
-│   ├── artists/            # 艺术家信息
-│   ├── music/              # 音乐作品
-│   └── videos/             # 视频内容
-├── public/                 # 静态资源
-│   └── image/              # 图片资源
-├── src/
-│   ├── app/                # Next.js App Router
-│   ├── components/         # UI组件
-│   └── lib/               # 工具函数
-├── content-collections.ts # 内容集合配置
-└── package.json           # 项目配置
-```
-
-## 🎵 功能模块
-
-### 艺术家展示
-- 团队成员信息展示
-- 个人简介和作品集
-- 图片和描述信息
-
-### 音乐作品
-- 音乐专辑展示
-- 试听链接配置
-- 详细作品介绍
-- 支持外部音乐平台跳转
-
-### 视频内容
-- 音乐视频展示
-- 外部视频平台链接
-- 缩略图和描述
-
-## 🛠️ 技术架构与实现
-
-### 前端技术栈
-- **Next.js 15.5.4** - 全栈React框架，展示路由架构能力
-- **React 19** - 现代化组件开发，状态管理实现
-- **TypeScript** - 类型安全开发，接口设计能力
-
-### UI组件系统
-- **shadcn/ui** - 基于Radix UI的现代化组件库，展示组件定制能力
-- **Tailwind CSS 4** - 实用优先的CSS框架，样式设计能力
-- **Radix UI** - 无障碍基础组件，可访问性实现
-- **Embla Carousel** - 轮播组件集成，第三方库整合能力
-
-### 内容管理系统
-- **Content Collections** - 静态内容管理架构设计
-- **Markdown支持** - 内容编写系统实现
-
-### 开发与构建
-- **Turbopack** - 快速构建工具，性能优化能力
-- **ESLint** - 代码质量检查，规范开发流程
 
 ## 📝 内容管理
 
-### 添加新音乐作品
+### 添加艺术家
+
+在 `content/artists/` 目录下创建Markdown文件：
+
+```markdown
+---
+title: "艺术家名称"
+genre: "音乐流派"
+description: "艺术家描述"
+image: "/image/图片文件名.jpg"
+order: 1
+---
+
+艺术家详细介绍内容...
+```
+
+### 添加音乐
 
 在 `content/music/` 目录下创建Markdown文件：
 
@@ -109,118 +149,116 @@ team-site-next/
 ---
 title: "歌曲名称"
 artist: "艺术家名称"
+album: "专辑名称"
+year: 2024
+description: "歌曲描述"
 image: "/image/专辑封面.jpg"
-order: 排序序号
-url: "https://音乐平台链接"
+order: 1
+url: "试听链接"
 ---
 
-这里是音乐的详细介绍内容...
+歌曲详细介绍内容...
 ```
 
-### 添加艺术家信息
+### 添加视频
 
-在 `content/artists/` 目录下创建Markdown文件：
+在 `content/videos/` 目录下创建Markdown文件：
 
 ```markdown
 ---
-title: "艺术家名称"
-genre: "音乐风格"
-image: "/image/艺术家照片.jpg"
-order: 排序序号
-description: "艺术家简介"
+title: "视频标题"
+artist: "艺术家名称"
+description: "视频描述"
+thumbnail: "/image/缩略图.jpg"
+url: "视频链接"
+order: 1
 ---
 
-详细的艺术家介绍...
+视频详细介绍内容...
 ```
 
-## 🎨 自定义配置
+## 🌐 部署
 
-### 修改主题颜色
+### GitHub Pages
 
-编辑 `src/app/globals.css` 文件中的CSS变量：
+项目已配置GitHub Actions自动部署到GitHub Pages：
 
-```css
-:root {
-  --primary-color: #800020; /* 主色调 */
-  --secondary-color: #ffffff; /* 辅助色 */
-}
-```
+1. 推送代码到GitHub仓库
+2. GitHub Actions自动构建和部署
+3. 访问 https://TrashBeatGod.github.io/team-site-next
 
-### 添加新功能模块
-
-1. 在 `content-collections.ts` 中定义新的内容类型
-2. 创建对应的Markdown模板
-3. 在页面组件中添加展示逻辑
-
-## 🔧 技术实现细节
-
-### 架构设计能力
-- **模块化设计**: 清晰的目录结构和组件分离
-- **类型安全**: 完整的TypeScript接口定义
-- **状态管理**: React Hooks状态管理实现
-
-### UI组件开发
-- **shadcn/ui集成**: 基于设计系统的组件开发
-- **自定义组件**: `src/components/ui/` 目录下的定制化组件
-- **响应式设计**: 多设备适配实现
-
-### 代码质量
-
-项目使用ESLint进行严格的代码质量检查：
+### 手动部署
 
 ```bash
-npm run lint
+# 构建项目
+npm run build
+
+# 导出静态文件
+npm run export
+
+# 部署到任意静态文件服务器
+```
+
+## 🔧 配置说明
+
+### Next.js配置
+
+在 `next.config.ts` 中配置：
+
+- 静态导出模式
+- GitHub Pages basePath设置
+- 图片优化配置
+- Content Collections集成
+
+### Content Collections配置
+
+在 `content-collections.ts` 中定义内容类型和验证规则。
+
+## 🎨 自定义主题
+
+项目使用CSS自定义属性实现主题系统：
+
+```css
+@theme inline {
+  --color-primary: #你的主色;
+  --font-sans: var(--font-geist-sans);
+  /* 更多主题变量... */
+}
 ```
 
 ## 📊 性能优化
 
-- **图片优化**: 使用Next.js Image组件
-- **代码分割**: 自动代码分割和懒加载
-- **静态生成**: 支持静态站点生成(SSG)
-- **CDN支持**: 配置assetPrefix支持CDN
+- **静态导出**: 预渲染所有页面，提供最佳性能
+- **图片优化**: 自动优化图片资源
+- **代码分割**: 自动分割JavaScript包
+- **CSS优化**: 生产环境CSS压缩
 
-## 🌐 部署
+## 🤝 贡献指南
 
-### GitHub Pages部署
+1. Fork 项目
+2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 创建Pull Request
 
-项目已配置GitHub Actions自动部署到GitHub Pages。详细部署指南请参考 [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)。
+## 📄 许可证
 
-部署地址：https://TrashBeatGod.github.io/team-site-next
+本项目采用MIT许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
 
-### Vercel部署（推荐）
+## 🙏 致谢
 
-1. 推送代码到Git仓库
-2. 在Vercel中导入项目
-3. 配置环境变量（如有需要）
-4. 自动部署
+- [Next.js](https://nextjs.org/) - React全栈框架
+- [Tailwind CSS](https://tailwindcss.com/) - CSS框架
+- [shadcn/ui](https://ui.shadcn.com/) - UI组件库
+- [Content Collections](https://content-collections.dev/) - 内容管理系统
 
-### 静态导出
+## 📞 联系方式
 
-```bash
-npm run build
-```
-
-生成的 `out` 目录可以部署到任何静态文件服务器。
-
-## 💡 技术亮点展示
-
-### 前端开发能力
-- **全栈开发**: 独立完成前后端一体化开发
-- **现代化技术栈**: 掌握最新前端技术趋势
-- **组件化思维**: 可复用组件设计和开发
-
-### 架构设计能力
-- **项目架构**: 清晰的项目结构和模块划分
-- **技术选型**: 合理的技术栈选择和集成
-- **性能优化**: 构建优化和运行时性能考虑
-
-### 用户体验设计
-- **交互设计**: Windows桌面风格的直观交互
-- **视觉设计**: 美观的界面和视觉层次
-- **响应式设计**: 多设备适配能力
-
-## 📄 项目信息
-
-本项目为个人开发作品，用于练习前端开发能力和技术架构设计能力。
+- 项目主页: https://github.com/TrashBeatGod/team-site-next
+- 问题反馈: [GitHub Issues](https://github.com/TrashBeatGod/team-site-next/issues)
 
 ---
+
+**开发团队**: TrashBeatGod  
+**最后更新**: 2024年  
+**版本**: 1.0.0
