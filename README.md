@@ -181,6 +181,12 @@ npm run lint
 
 ## 🌐 部署
 
+### GitHub Pages部署
+
+项目已配置GitHub Actions自动部署到GitHub Pages。详细部署指南请参考 [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)。
+
+部署地址：https://TrashBeatGod.github.io/team-site-next
+
 ### Vercel部署（推荐）
 
 1. 推送代码到Git仓库
